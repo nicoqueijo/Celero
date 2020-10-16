@@ -9,6 +9,9 @@ class Repository @Inject constructor(
     private val networkService: NetworkService
 ) {
 
+    /**
+     * Test
+     */
     suspend fun makeApiCall() {
         val retrofitResponse: Response<List<Customer>>
         retrofitResponse = networkService.getCustomers()

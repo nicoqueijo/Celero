@@ -8,8 +8,10 @@ import dagger.hilt.android.scopes.ActivityRetainedScoped
 @ActivityRetainedScoped
 class MainViewModel @ViewModelInject constructor(private val repository: Repository) : ViewModel() {
 
+    /**
+     * Test
+     */
     suspend fun makeApiCall() {
         repository.makeApiCall()
     }
-
 }
