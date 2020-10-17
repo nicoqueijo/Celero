@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Celero</string>
+    <!-- UI elements -->
+    <string name="name_key">Name:</string>
+    <string name="name_value_sample">Michael Hunt</string>
+    <string name="phone_number_key">Phone number:</string>
+    <string name="phone_number_value_sample">+1 (555) 344–5076</string>
+    <string name="address_key">Address:</string>
+    <string name="address_line_1_value_sample">142 N Country Club Drive</string>
+    <string name="address_line_2_value_sample">Hendersonville, TN 37075</string>
+    <string name="service_reason_key">Service reason:</string>
+    <string name="service_reason_value_sample">I have a leaky faucet</string>
 </resources>
