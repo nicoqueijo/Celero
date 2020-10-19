@@ -39,7 +39,7 @@ class CustomerAdapter(private val customers: List<Customer>) :
         holder.apply {
             bind(customers[position])
             Glide.with(itemView)
-                .load(customers[position].profilePicture.thumbnail)
+                .load(customers[position].profilePicture.medium)
                 .into(profilePicture)
         }
     }
