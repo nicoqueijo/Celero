@@ -1,115 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:paddingStart="16dp"
-    android:paddingTop="24dp"
-    android:paddingEnd="16dp"
-    android:paddingBottom="24dp">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/profile_picture_value"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
 
-    <TextView
-        android:id="@+id/name_key"
+        <variable
+            name="customer"
+            type="com.nicoqueijo.celero.model.Customer" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:paddingRight="16dp"
-        android:text="@string/name_key"
-        app:layout_constraintEnd_toStartOf="@+id/profile_picture_value"
-        app:layout_constraintTop_toBottomOf="@+id/profile_picture_value" />
+        android:paddingStart="16dp"
+        android:paddingTop="24dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="24dp">
 
-    <TextView
-        android:id="@+id/name_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="@+id/profile_picture_value"
-        app:layout_constraintTop_toBottomOf="@+id/profile_picture_value"
-        tools:text="@string/name_value_sample" />
+        <ImageView
+            android:id="@+id/profile_picture_value"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/phone_number_key"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:paddingRight="16dp"
-        android:text="@string/phone_number_key"
-        app:layout_constraintEnd_toStartOf="@+id/profile_picture_value"
-        app:layout_constraintTop_toBottomOf="@+id/name_key" />
+        <TextView
+            android:id="@+id/name_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:paddingRight="16dp"
+            android:text="@string/name_key"
+            app:layout_constraintEnd_toStartOf="@+id/profile_picture_value"
+            app:layout_constraintTop_toBottomOf="@+id/profile_picture_value" />
 
-    <TextView
-        android:id="@+id/phone_number_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="@+id/profile_picture_value"
-        app:layout_constraintTop_toBottomOf="@+id/name_value"
-        tools:text="@string/phone_number_value_sample" />
+        <TextView
+            android:id="@+id/name_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{customer.name}"
+            app:layout_constraintStart_toStartOf="@+id/profile_picture_value"
+            app:layout_constraintTop_toBottomOf="@+id/profile_picture_value"
+            tools:text="@string/name_value_sample" />
 
-    <TextView
-        android:id="@+id/address_key"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:paddingRight="16dp"
-        android:text="@string/address_key"
-        app:layout_constraintEnd_toStartOf="@+id/profile_picture_value"
-        app:layout_constraintTop_toBottomOf="@+id/phone_number_key" />
+        <TextView
+            android:id="@+id/phone_number_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:paddingRight="16dp"
+            android:text="@string/phone_number_key"
+            app:layout_constraintEnd_toStartOf="@+id/profile_picture_value"
+            app:layout_constraintTop_toBottomOf="@+id/name_key" />
 
-    <TextView
-        android:id="@+id/address_line_1_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="@+id/profile_picture_value"
-        app:layout_constraintTop_toBottomOf="@+id/phone_number_value"
-        tools:text="@string/address_line_1_value_sample" />
+        <TextView
+            android:id="@+id/phone_number_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{customer.phoneNumber}"
+            app:layout_constraintStart_toStartOf="@+id/profile_picture_value"
+            app:layout_constraintTop_toBottomOf="@+id/name_value"
+            tools:text="@string/phone_number_value_sample" />
 
-    <TextView
-        android:id="@+id/address_line_2_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="@+id/profile_picture_value"
-        app:layout_constraintTop_toBottomOf="@+id/address_line_1_value"
-        tools:text="@string/address_line_2_value_sample" />
+        <TextView
+            android:id="@+id/address_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:paddingRight="16dp"
+            android:text="@string/address_key"
+            app:layout_constraintEnd_toStartOf="@+id/profile_picture_value"
+            app:layout_constraintTop_toBottomOf="@+id/phone_number_key" />
 
-    <TextView
-        android:id="@+id/service_reason_key"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:paddingRight="16dp"
-        android:text="@string/service_reason_key"
-        app:layout_constraintEnd_toStartOf="@+id/profile_picture_value"
-        app:layout_constraintTop_toBottomOf="@+id/address_line_2_value" />
+        <TextView
+            android:id="@+id/address_line_1_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{customer.location.address.addressLine1}"
+            app:layout_constraintStart_toStartOf="@+id/profile_picture_value"
+            app:layout_constraintTop_toBottomOf="@+id/phone_number_value"
+            tools:text="@string/address_line_1_value_sample" />
 
-    <TextView
-        android:id="@+id/service_reason_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toEndOf="@+id/address_key"
-        app:layout_constraintStart_toStartOf="@+id/profile_picture_value"
-        app:layout_constraintTop_toBottomOf="@+id/address_line_2_value"
-        tools:text="@string/service_reason_value_sample" />
+        <TextView
+            android:id="@+id/address_line_2_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{customer.location.address.addressLine2}"
+            app:layout_constraintStart_toStartOf="@+id/profile_picture_value"
+            app:layout_constraintTop_toBottomOf="@+id/address_line_1_value"
+            tools:text="@string/address_line_2_value_sample" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/problem_pictures"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/service_reason_value" />
+        <TextView
+            android:id="@+id/service_reason_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:paddingRight="16dp"
+            android:text="@string/service_reason_key"
+            app:layout_constraintEnd_toStartOf="@+id/profile_picture_value"
+            app:layout_constraintTop_toBottomOf="@+id/address_line_2_value" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/service_reason_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{customer.serviceReason}"
+            app:layout_constraintStart_toEndOf="@+id/address_key"
+            app:layout_constraintStart_toStartOf="@+id/profile_picture_value"
+            app:layout_constraintTop_toBottomOf="@+id/address_line_2_value"
+            tools:text="@string/service_reason_value_sample" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/problem_pictures"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/service_reason_value" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

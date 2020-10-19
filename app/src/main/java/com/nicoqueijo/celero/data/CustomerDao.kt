@@ -1,6 +1,5 @@
 package com.nicoqueijo.celero.data
 
-import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.nicoqueijo.celero.model.Customer
 
@@ -11,11 +10,16 @@ interface CustomerDao {
     suspend fun upsertCustomer(customer: Customer)
 
     @Transaction
-    suspend fun upsertCustomers(currencies: List<Customer>) {
-        currencies.forEach { upsertCustomer(it) }
+    suspend fun upsertCustomers(customers: List<Customer>) {
+        customers.forEach { upsertCustomer(it) }
     }
 
-    @Query("SELECT * FROM Customer ORDER BY visitOrder ASC")
-    fun getCustomers(): LiveData<MutableList<Customer>>
+    @Query("DELETE FROM Customer")
+    suspend fun deleteCustomers()
 
+    @Query("SELECT * FROM Customer ORDER BY visitOrder ASC")
+    suspend fun getCustomers(): List<Customer>
+
+    @Query("SELECT COUNT(*) FROM Customer")
+    suspend fun getCustomerCount(): Int
 }

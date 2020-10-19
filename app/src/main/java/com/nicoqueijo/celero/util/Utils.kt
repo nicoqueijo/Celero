@@ -3,10 +3,11 @@ package com.nicoqueijo.celero.util
 object Utils {
     /**
      * Notes:
-     * -This could also be changed to a map for performance reasons.
+     * -This could also be changed to use a map for performance reasons.
      * -This only assumes addresses are all within Unites States.
      *  Might not work with international addresses and Washington DC, for example.
      */
+    @JvmStatic
     fun getAbbreviatedState(state: String): String {
         return when (state) {
             "Alabama" -> "AL"
