@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.nicoqueijo.celero.databinding.RowCustomerBinding
 import com.nicoqueijo.celero.model.Customer
+import com.nicoqueijo.celero.view.CustomerDialogFragment
+import com.nicoqueijo.celero.view.MainActivity
 
 class CustomerAdapter(private val customers: List<Customer>) :
     RecyclerView.Adapter<CustomerAdapter.CustomerViewHolder>() {
@@ -14,6 +16,14 @@ class CustomerAdapter(private val customers: List<Customer>) :
         RecyclerView.ViewHolder(binding.root) {
 
         val profilePicture = binding.profilePicture
+
+        init {
+            itemView.setOnClickListener {
+                CustomerDialogFragment(customers[adapterPosition]).show(
+                    (itemView.context as MainActivity).supportFragmentManager, "dialog"
+                )
+            }
+        }
 
         fun bind(customer: Customer) {
             binding.customer = customer
