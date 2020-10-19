@@ -10,7 +10,7 @@
             type="com.nicoqueijo.celero.model.Customer" />
     </data>
 
-
+    <!-- Common attributes could be moves to styles.xml -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
